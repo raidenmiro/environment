@@ -15,44 +15,25 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ## Zshrc config
 
 ```r
-ZSH_THEME="robbyrussell"
-
-# History
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# Promp
-PROMPT='%n@%m:%15<..<%~%<<%# '
+export ZSH="$HOME/.oh-my-zsh"
 
-# Plugins
-plugins=(
-  z
-  git 
-  docker
-  docker-compose
-  zsh-autosuggestions 
-  zsh-syntax-highlighting
-  asdf
-)
+ZSH_THEME="robbyrussell"
 
-# Alias
-alias nc='npm commit'
-alias ni='npm install'
-alias tgs='tig status'
-alias h='htop'
-alias la='ls -a'
-alias lla='ls -la'
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting asdf)
 
-# Stamp
-HIST_STAMPS="mm/dd/yyyy
+source $ZSH/oh-my-zsh.sh
 
-# Python
-export PATH=~/.local/bin/:$PATH
+alias python=/usr/bin/python3
+alias yc="yarn commit"
+alias tgs="tig status"
 
-# Env
-export EDITOR=vim
-export TERMINAL=alacritty
-export VISUAL=vim
-export DISABLE_AUTO_UPDATE="true"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/lordszn/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 ```
